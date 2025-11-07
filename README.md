@@ -91,3 +91,7 @@ Notes:
 - Add unit tests for services and controllers; mock dependencies via Moq.
 - Use feature branches and descriptive commits. Open a PR for review.
 
+<img width="1665" height="855" alt="image" src="https://github.com/user-attachments/assets/bb5e08b8-272b-4e60-bad6-d9437e3e8412" />
+<img width="1502" height="940" alt="image" src="https://github.com/user-attachments/assets/6245acd0-360d-4096-831d-e8bc6545af75" />
+<img width="1505" height="830" alt="image" src="https://github.com/user-attachments/assets/ba87a068-7318-410a-959f-bfd16739981d" />
+
