@@ -1,0 +1,51 @@
+
+@if(card(); as c) {
+  <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out w-full max-w-sm mx-auto">
+    <div class="relative">
+      <div class="h-24 bg-gradient-to-r from-sky-500 to-indigo-500"></div>
+      <div class="absolute -bottom-10 left-1/2 -translate-x-1/2">
+        @if(c.photo) {
+          <img class="w-24 h-24 rounded-full border-4 border-white shadow-md object-cover" [src]="c.photo" alt="Profile photo">
+        } @else {
+           <div class="w-24 h-24 rounded-full border-4 border-white shadow-md bg-slate-300 flex items-center justify-center">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-slate-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+           </div>
+        }
+      </div>
+    </div>
+    
+    <div class="pt-14 p-6 text-center">
+      <h2 class="text-2xl font-bold text-slate-800">{{ c.name || 'Your Name' }}</h2>
+      <p class="text-slate-500 mt-1">{{ c.email || 'your.email@example.com' }}</p>
+
+      <div class="mt-4 text-left text-sm text-slate-600 space-y-2">
+        <p class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-sky-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.759a11.024 11.024 0 006.138 6.138l.758-1.518a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+          {{ c.phone || '123-456-7890' }}
+        </p>
+        <p class="flex items-center">
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          {{ c.address || '123 Imaginary Lane' }}
+        </p>
+         <p class="flex items-center">
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-sky-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+          {{ (c.dateOfBirth | date:'longDate') || 'January 1, 2000' }}
+        </p>
+         <p class="flex items-center">
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-sky-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 7a1 1 0 00-1 1v4a1 1 0 102 0V9a1 1 0 011-1h2a1 1 0 100-2H8a1 1 0 00-1 1z" clip-rule="evenodd" /></svg>
+          {{ c.gender || 'Not specified' }}
+        </p>
+      </div>
+    </div>
+    
+    @if(showActions()) {
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+        <button (click)="onDelete()" class="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors">
+          Delete
+        </button>
+      </div>
+    }
+  </div>
+}
