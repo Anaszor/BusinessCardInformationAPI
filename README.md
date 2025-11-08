@@ -1,6 +1,6 @@
 # BusinessCardInformationAPI
 
-A layered ASP.NET Core Web API for importing, exporting and managing business card data, plus a JavaScript/TypeScript frontend located in `/Web`. The backend follows a clean Onion architecture with Domain, Application and Infrastructure layers and uses SOLID principles (controllers orchestrate, parsing/QR logic moved to services).
+A layered ASP.NET Core Web API for importing, exporting and managing business card data, Angular/TypeScript frontend located in `/Web`. The backend follows a clean Onion architecture with Domain, Application and Infrastructure layers and uses SOLID principles (controllers orchestrate, parsing/QR logic moved to services).
 
 ## Repository layout
 - `BusinessCardInformationAPI/` — ASP.NET Core Web API project (controllers, DI).
