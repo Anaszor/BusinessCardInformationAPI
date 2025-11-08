@@ -8,7 +8,7 @@ A layered ASP.NET Core Web API for importing, exporting and managing business ca
 - `Domain/` — domain entities and repository interfaces.
 - `Infrastructure/` — persistence, EF Core configurations and data seeding.
 - `Tests/` — unit tests (xUnit + Moq).
-- `Web/` — frontend (JavaScript/TypeScript). Check `Web/package.json` for actual scripts.
+- `Web/` — frontend Angular/TypeScript. 
 
 ## Key implementation notes
 - Controller is an orchestration layer only — file import and QR parsing are implemented in `Application.Services` (`FileImportService`, `QrProcessor`) and injected via abstractions (`IFileImportService`, `IQrProcessor`) to respect Single Responsibility and Dependency Inversion.
