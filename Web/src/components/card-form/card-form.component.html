@@ -106,13 +106,17 @@
                 </button>
             </div>
         </form>
-
-        <!-- Preview Section -->
-        <div class="sticky top-8">
-            <h3 class="text-2xl font-bold text-slate-800 mb-4">Live Preview</h3>
-            <div class="flex items-center justify-center">
-                <app-business-card [card]="cardPreview()" [showActions]="false"></app-business-card>
+      
+        <div class="flex flex-col">
+            <!-- Preview Section -->
+            <div class="sticky top-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4 text-center">Live Preview</h3>
+                <div class="flex flex-col items-center justify-center">
+                    <app-business-card [card]="cardPreview()" [showActions]="false"></app-business-card>
+                </div>
             </div>
         </div>
+
+
     </div>
 </div>
