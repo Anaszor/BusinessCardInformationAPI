@@ -1,19 +1,19 @@
 # BusinessCardInformationAPI
 
-A layered ASP.NET Core Web API for importing, exporting and managing business card data, Angular/TypeScript frontend located in `/Web`. The backend follows a clean Onion architecture with Domain, Application and Infrastructure layers and uses SOLID principles (controllers orchestrate, parsing/QR logic moved to services).
+A layered ASP.NET Core Web API for importing, exporting and managing business card data, Angular/TypeScript frontend located in `/Web`. The backend follows a clean Onion architecture with Domain, Application and Infrastructure layers and uses SOLID principles (controllers orchestrate, parsing CSV,XML/QR services).
 
 ## Repository layout
 - `BusinessCardInformationAPI/` — ASP.NET Core Web API project (controllers, DI).
-- `Application/` — application services, DTOs, interfaces (e.g. `IFileImportService`, `IQrProcessor`).
+- `Application/` — application services, DTOs, interfaces.
 - `Domain/` — domain entities and repository interfaces.
 - `Infrastructure/` — persistence, EF Core configurations and data seeding.
 - `Tests/` — unit tests (xUnit + Moq).
 - `Web/` — frontend Angular/TypeScript. 
 
 ## Key implementation notes
-- Controller is an orchestration layer only — file import and QR parsing are implemented in `Application.Services` (`FileImportService`, `QrProcessor`) and injected via abstractions (`IFileImportService`, `IQrProcessor`) to respect Single Responsibility and Dependency Inversion.
+- Controller is an orchestration layer only — file import and QR parsing are implemented in `Application.Services` to respect Single Responsibility and Dependency Inversion.
 - DTOs live in `Application/DTOs`. Domain entities are in `Domain/Entities`.
-- `Infrastructure` contains repository implementations and EF Core configurations (check `BusinessCardConfiguration` and `DataSeeder`).
+- `Infrastructure` contains repository implementations and EF Core configurations and DataSeeder.
 - Unit tests mock `IBusinessCardService` and validate controller behavior using xUnit and Moq.
 
 ## Tech stack
